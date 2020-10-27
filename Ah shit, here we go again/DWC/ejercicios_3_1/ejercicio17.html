@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        width: 100px;
+        border: solid 2px green;
+        background-color: #e1f2df;
+        text-align: center;
+    }
+</style>
+<body>
+    
+    <script>
+        var horario = [];
+        horario.push(['','Lunes','Martes','Miércoles','Jueves','Viernes'])
+        horario.push(['09:00-09:50','DWS','DIW','DWS','DWC','EIE']);
+        horario.push(['09:50-10:40','DWS','DIW','DWS','DWC','EIE']);
+        horario.push(['10:40-11:00','RECREO','RECREO','RECREO','RECREO','RECREO']);
+        horario.push(['11:00-10:50','DWS','DWS','DIW','DWS','DIW']);
+        horario.push(['11:50-12:40','EIE','DWS','DIW','DWS','DIW']);
+        horario.push(['12:40-12:55','RECREO','RECREO','RECREO','RECREO','RECREO']);
+        horario.push(['12:55-13:45','DAW','DWC','ING','DAW','DWC']);
+        horario.push(['13:45-14:35','DAW','DWC','ING','DAW','DWC']);
+
+        var resultado = "";
+        resultado += "<table>";
+        for (let i = 0; i < horario.length; i++) {
+            resultado += "<tr>";
+            for (let j = 0; j < horario[j].length; j++) {
+                resultado += '<td>'+horario[i][j]+'</td>';
+            }
+            resultado += "</tr>";
+        }
+        resultado += "</table>";
+        document.write(resultado);
+    </script>
+
+</body>
+</html>

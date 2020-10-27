@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var caracter = prompt("Inserte un carácter");
+        caracter.toString();
+
+        switch (caracter.toLowerCase()) {
+            case "a": case "e": case "i": case "o": case "u":
+                document.write("Es una vocal");
+                if (caracter.toLowerCase() == caracter) {
+                    document.write("</br> Está en minúsculas");
+                } else {
+                    document.write("</br> Está en mayúsculas");
+                }
+                break;
+            case "0": case "1": case "2": case "3": case "4": case "5": case "6": case "7": case"8": case"9":
+                document.write("Es un número");
+                break;
+            case "b": case"c": case "d": case "f": case "g": case "h": case "j": case "k": case "l": case "m": case "n": case "ñ": case "p": case "q": case "r": case "s": case "t": case "v": case "w": case "x": case "y": case "z":
+                document.write("Es una consonante");
+                if (caracter.toLowerCase() == caracter) {
+                    document.write("</br> Está en minúsculas");
+                } else {
+                    document.write("</br> Está en mayúsculas");
+                }
+                break;
+            default:
+                document.write("Es un signo distinto");
+                break;
+        }
+    </script>
+</body>
+</html>

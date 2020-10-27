@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function jugar() {
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+
+            var MAX, MIN;
+            
+            if (num1>num2) {
+                var MAX=num1;
+                var MIN=num2;
+            } else {
+                var MAX=num2;
+                var MIN=num1;
+            }
+            
+            var difNums = MAX - MIN;
+            var minSum = MIN;
+            var numAleatorio = Math.floor(Math.random() * (MAX - MIN + 1) + parseFloat(MIN));
+            
+            var nIntentos = 0;
+            var ayudas;
+            dificultad = document.getElementById('menu');
+            strDificultad = dificultad.options[dificultad.selectedIndex].value;
+            switch (strDificultad) {
+            case "E":
+                nIntentos = parseInt((difNums)/2);
+                ayudas = true;
+                break;
+            case "M":
+                nIntentos = parseInt((difNums)/4);
+                ayudas = true;
+                break;
+            case "H":
+                nIntentos = parseInt((difNums)/8);
+                ayudas = false;
+                break;
+            default:
+                alert("Error");
+                break;
+            }
+            var ganado = false;
+            var intentos=0;
+            for (var i=0;i<nIntentos;i++) {
+                var num = parseInt(prompt("Dime un número"));
+                if (num==numAleatorio) {
+                    ganado = true;
+                    intentos = i;
+                    break;
+                } else {
+                    if (ayudas) {
+                        if (num>numAleatorio) {
+                            alert("Error, el número es menor que el indicado");
+                        } else {
+                            alert("Error, el número es mayor que el indicado");
+                        }
+                    }
+                }
+            }
+            if (ganado) {
+                var ganador=prompt("Felicidades, has ganado!, indicamé tu nombre:");
+                alert(ganador + ", su puntuación ha sido: " + intentos);
+            } else {
+                alert("No ha conseguido ganar");
+            }
+            var jugarOtraVez = prompt("Indica con un si o no si desea jugar otra vez");
+            
+            if (jugarOtraVez == "1") {
+                window.variable=false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p> Número 1: <input type='text' name='num1' id='num1' size='2'></p>
+        <p> Número 2: <input type='text' name='num2' id='num2' size='2'></p>
+        <p> Dificultad: <select name='menu' id='menu'>\n<option value='E'>Fácil</option>\n<option value='M'>Normal</option>\n<option value='H'>Difícil</option></select></p>
+        <input type='submit' value='Jugar' id='Jugar' onclick='jugar()'>
+        <p id='test'></p>
+    </form>
+</body>
+</html>

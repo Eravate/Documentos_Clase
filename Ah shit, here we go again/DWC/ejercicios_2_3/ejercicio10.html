@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var operacion = "";
+        var operandoAnterior = "";
+        var numOp = 0;
+        function realizarOperacion(operando) {
+            switch(operando) {
+                case '+': case '-': case '*': case '/':
+                    if (operandoAnterior != '+' && operandoAnterior != '-' && operandoAnterior != '*' && operandoAnterior != '*' && operandoAnterior != '/' && operandoAnterior != '' && operandoAnterior != 'C') {
+                        operacion += " " + operando + " "; 
+                    }
+                    break;
+                case 'C':
+                    operacion = "";
+                    break;
+                case '=':
+                if (operandoAnterior != '+' && operandoAnterior != '-' && operandoAnterior != '*' && operandoAnterior != '*' && operandoAnterior != '/' && operandoAnterior != '' && operandoAnterior != 'C') {
+                        numOp = eval(operacion);
+                        operacion = numOp;
+                    }
+                    break;
+                default:
+                    operacion += operando;
+                    break;
+            }   
+            var display = document.getElementById('display');
+            display.innerHTML = operacion;
+            operandoAnterior = operando;
+        }
+    </script>
+    <style>
+        .button {
+            background-color: #EEEEEE; /* Green */
+            border: 1px solid grey;
+            color: black;
+            padding: 15px 0px;
+            width: 200px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .buttonB {
+            background-color: #EEEEEE; /* Green */
+            border: 1px solid grey;
+            color: black;
+            width: 426px;
+            padding: 15px 0px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .display {
+            background-color: black; /* Green */
+            border: none;
+            width: 880px;
+            color: white;
+            padding: 50px 0px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <p class="display" id="display"></p>
+        <p class="button" onclick="realizarOperacion('1')">1</p>
+        <p class="button" onclick="realizarOperacion('2')">2</p>
+        <p class="button" onclick="realizarOperacion('3')">3</p>
+        <p class="button" onclick="realizarOperacion('+')">+</p>
+        <br>
+        <p class="button" onclick="realizarOperacion('4')">4</p>
+        <p class="button" onclick="realizarOperacion('5')">5</p>
+        <p class="button" onclick="realizarOperacion('6')">6</p>
+        <p class="button" onclick="realizarOperacion('-')">-</p>
+        <br>
+        <p class="button" onclick="realizarOperacion('7')">7</p>
+        <p class="button" onclick="realizarOperacion('8')">8</p>
+        <p class="button" onclick="realizarOperacion('9')">9</p>
+        <p class="button" onclick="realizarOperacion('*')">*</p>
+        <br>
+        <p class="button" onclick="realizarOperacion('0')">0</p>
+        <p class="buttonB" onclick="realizarOperacion('=')">=</p>
+        <p class="button" onclick="realizarOperacion('/')">/</p>
+        <br>
+        <p class="button" onclick="realizarOperacion('C')">C</p>
+    </form>
+</body>
+</html>

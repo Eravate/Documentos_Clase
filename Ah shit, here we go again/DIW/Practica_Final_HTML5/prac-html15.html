@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo FP</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Todo FP</h1>
+            <img src="images/todofp.png" height="100px";/>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#" target="_blank">Inicio</a></li>
+                <li><a href="#" target="_blank">Sobre FP</a></li>
+                    <ul>
+                        <li><a href="#">Actualidad</a></li>
+                        <li><a href="#">La Formación en Centros de Trabajo</a></li>
+                    </ul>
+                <li><a href="#" target="_blank">Orientación profesional</a></li>
+                <li><a href="#" target="_blank">Pruebas y convalidaciones</a></li>
+                    <ul>
+                        <li><a href="#">Pruebas</a></li>
+                        <li><a href="#">Convalidaciones</a></li>
+                    </ul>
+                <li><a href="#" target="_blank">Acreditación de competencias</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <form action="#">
+                <fieldset>
+                    <legend>Zona usuarios</legend><br>
+                    <!--<label for="usuario" class="text-muted" disabled>Usuario</label><br>-->
+                    <input type="text" id="usuario" name="usuario" placeholder="Usuario" pattern="[a-z]+"><br><br>
+                    <!--<label for="contrasena" class="text-muted" disabled>Contraseña</label><br>-->
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" pattern="{0,10}"><br><br>
+                    <input type="submit" id="iniciar" name="iniciar" value="Iniciar Sesión">
+                </fieldset>
+            </form>
+        </aside>
+        <section>
+
+        </section>
+        <footer>
+            <p>Práctica HTML5 y Multimedia en la Web</p>
+        </footer>
+    </main>
+</body>
+</html>

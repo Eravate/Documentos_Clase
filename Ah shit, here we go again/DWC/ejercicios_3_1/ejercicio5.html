@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mes = prompt("Dime el nombre del mes: ")
+        var date;
+        var lonmes;
+        var nummesfest;
+        switch(mes.toLowerCase()) {
+            case "enero":
+                date = new Date("January 1 2020");
+                lonMes=31;
+                nummesfest=0;
+                break;
+            case "febrero":
+                date = new Date("February 1 2020");
+                lonMes=29;
+                nummesfest=1;
+                break;
+            case "marzo":
+                date = new Date("March 1 2020");
+                lonMes=31;
+                nummesfest=2;
+                break;
+            case "abril":
+                date = new Date("April 1 2020");
+                lonMes=30;
+                nummesfest=3;
+                break;
+            case "mayo":
+                date = new Date("May 1 2020");
+                lonMes=31;
+                nummesfest=4;
+                break;
+            case "junio":
+                date = new Date("June 1 2020");
+                lonMes=30;
+                nummesfest=5;
+                break;
+            case "julio":
+                date = new Date("July 1 2020");
+                lonMes=31;
+                nummesfest=6;
+                break;
+            case "agosto":
+                date = new Date("August 1 2020");
+                lonMes=31;
+                nummesfest=7;
+                break;
+            case "septiembre":
+                date = new Date("September 1 2020");
+                lonMes=30;
+                nummesfest=8;
+                break;
+            case "octubre":
+                date = new Date("October 1 2020");
+                lonMes=31;
+                nummesfest=9;
+                break;
+            case "noviembre":
+                date = new Date("November 1 2020");
+                lonMes=30;
+                nummesfest=10;
+                break;
+            case "diciembre":
+                date = new Date("December 1 2020");
+                lonMes=31;
+                nummesfest=11;
+                break;
+            default:
+                alert("Inserta el mes correctamente");
+                break;
+        }
+        var numsem = date.getDay();
+        var primerDiaEncontrado = false;
+        var nummes = 0;
+        var festivos = [[1,6],[],[],[9,10,23],[1],[],[],[15],[9,10],[12],[1],[6,8,25]];
+        var mesFest = festivos[nummesfest];
+        document.write("<h1>", mes.toUpperCase(), "</h1>");
+        document.write("<table style='width:100%;text-align:center; border:1px solid black; border-collapse: collapse;'>");
+        document.write("<tr><td>Lunes</td><td>Martes</td><td>Miércoles</td><td>Jueves</td><td>Viernes</td><td>Sábado</td><td>Domingo</td></tr>")
+        do {
+            document.write("<tr>");
+            for (var i=0;i<7;i++) {
+                if (i==numsem) {
+                    primerDiaEncontrado = true;
+                    nummes++;
+                }
+                if (primerDiaEncontrado && nummes<=lonMes) {
+                    if (mesFest.includes(nummes)) {
+                        document.write("<td style='border:1px solid black;color: red;'>");
+                        document.write(nummes);
+                        document.write("</td>");
+                    } else {
+                        document.write("<td style='border:1px solid black'>");
+                        document.write(nummes);
+                        document.write("</td>");
+                    }
+                    nummes++;
+                } else {
+                    document.write("<td style='border:1px solid black'></td>")
+                }
+            }
+            document.write("/<tr>");
+        } while (nummes<lonMes);
+        document.write("</table>");
+    </script>
+</body>
+</html>

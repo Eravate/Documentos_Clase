@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num=prompt("Inserte un número");
+        for (var i=num;i>0;i--) {
+            for(var x=0;x<(num-i);x++) {
+                document.write("*");
+            }
+            for(var x=0;x<i;x++) {
+                document.write(i);
+            }
+            document.write("</br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        width: 100px;
+        border: solid 2px green;
+        background-color: #e1f2df;
+        text-align: center;
+    }
+</style>
+<body>
+    
+    <script>
+        var horario = [];
+        horario.push(['','Lunes','Martes','Miércoles','Jueves','Viernes'])
+        horario.push(['DWS','DIW','DWS','DWC','EIE']);
+        horario.push(['DWS','DIW','DWS','DWC','EIE']);
+        horario.push(['RECREO','RECREO','RECREO','RECREO','RECREO']);
+        horario.push(['DWS','DWS','DIW','DWS','DIW']);
+        horario.push(['EIE','DWS','DIW','DWS','DIW']);
+        horario.push(['RECREO','RECREO','RECREO','RECREO','RECREO']);
+        horario.push(['DAW','DWC','ING','DAW','DWC']);
+        horario.push(['DAW','DWC','ING','DAW','DWC']);
+
+        var fecha = new Date();
+        fecha.setHours(09,00,00);
+
+
+        for (let i = 1; i < horario.length; i++) {
+            var hora = '';
+            for (let i = 1; i <= 2; i++) {
+                if(fecha.getHours()<10){
+                    hora += '0';
+                }
+                hora += fecha.getHours()+':';
+                if(fecha.getMinutes()<10){
+                    hora += '0';
+                }
+                hora += fecha.getMinutes();
+                
+                if(i==1){
+                    if(fecha.getMinutes()==40){
+                        if(fecha.getHours()==10){
+                            fecha.setHours(fecha.getHours(),fecha.getMinutes()+20,fecha.getSeconds());
+                        } else {
+                            fecha.setHours(fecha.getHours(),fecha.getMinutes()+15,fecha.getSeconds());
+                        }
+                    } else {
+                        fecha.setHours(fecha.getHours(),fecha.getMinutes()+50,fecha.getSeconds());
+                    }
+                    hora+= '-';
+                }                
+            }
+            horario[i].unshift(hora);
+        }
+
+
+        var resultado = "";
+        resultado += "<table>";
+        for (let i = 0; i < horario.length; i++) {
+            resultado += "<tr>";
+            for (let j = 0; j < horario[j].length; j++) {
+                resultado += '<td>'+horario[i][j]+'</td>';
+            }
+            resultado += "</tr>";
+        }
+        resultado += "</table>";
+        document.write(resultado);
+    </script>
+
+</body>
+</html>

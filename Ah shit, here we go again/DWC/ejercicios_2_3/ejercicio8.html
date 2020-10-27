@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var columnas = prompt("Dime el número de columnas");
+        var filas = prompt("Dime el número de filas: ");
+        if (columnas0==0 || filas==0) {
+            document.write("columna y/o fila no puede ser igual a 0")
+        } else {
+            var num = columnas * filas;
+            var sumCol = 0;
+            var sumFil = new Array();
+
+            for (var i=0;i<=columnas;i++) {
+                sumFil.push(0);
+            }
+
+            document.write("<table style='width:100%; border:1px solid black'>");
+            for (var i=0;i<=filas;i++) {
+                sumCol = 0;
+                document.write("<tr>");
+                if (i==filas) {
+                    for (var x=0;x<=columnas;x++) {
+                        document.write("<td style='border:1px solid black'>");
+                        document.write("Suma(col",x+1,"): ", sumFil[x]);
+                        document.write("</td>");
+                    }
+                } else {
+                    for (var x=0;x<=columnas;x++) {
+                        document.write("<td style='border:1px solid black'>");
+                        if (columnas==x) {
+                            document.write("Suma(fil",i+1,"): ", sumCol);
+                            sumFil[x] += sumCol;
+                        } else {
+                            document.write(num);
+                            sumCol += num;
+                            sumFil[x] += num;
+                            num--;
+                        }
+                        document.write("</td>");
+                    }
+                }
+                document.write("</tr>");
+            }
+            document.write ("</table>");
+        }
+    </script>
+</body>
+</html>

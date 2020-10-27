@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="http://localhost/login.html" method="get">
+        <h1>Formulario</h1>
+        <p>Posición:</p>
+        <label for="alumno"><input type="radio" name="tipo" id="alumno" value="alumno" checked="checked">Alumno</label>
+        <label for="alumno"><input type="radio" name="tipo" id="profesor" value="profesor">Profesor</label>
+        <label for="alumno"><input type="radio" name="tipo" id="personal" value="personal">Personal no Docente</label><br><br>
+        <input type="number" name="numero" id="numero"><br><br>
+        <input type="date" name="date" id="date"><br><br>
+        <input type="color" name="color" id="color"><br><br>
+        <input type="range" name="range" id="range"><br><br>
+        <input type="email" name="email" id="email"><br><br>
+        <input type="url" name="url" id="url">
+        <input type="submit" value="enviar">
+    </form>
+    <script> var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyyy = today.getFullYear();
+        if(dd<10){
+                dd='0'+dd
+            } 
+            if(mm<10){
+                mm='0'+mm
+            } 
+        
+        today = yyyy+'-'+mm+'-'+dd;
+        document.getElementById("date").setAttribute("max", today); </script>
+</body>
+</html>

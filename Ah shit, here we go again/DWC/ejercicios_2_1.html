@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /** ejercicio 1
+        var nombre, edad, profesion;
+        nombre = prompt("Introduzca su nombre: ");
+        edad = prompt("Introduzca su edad: ")
+        profesion = prompt("Introduzca su profesion: ")
+        document.write("Su nombre es " + nombre + ", su edad es " + edad + ", y su profesion es " + profesion + ".")
+        */
+
+        /** ejercicio 2 
+        var num;
+        num = prompt("Inserte el número: ");
+        if (num%2==0) {
+            document.write("El número " + num + " es par");
+        } else {
+            document.write("El número " + num + " es impar");
+        } 
+        */
+
+        /** ejercicio 3
+        document.write("<section>");
+            document.write("<table style='width:100%; border:1px solid black'>");
+                for (var i=0;i<10;i++) {
+                    document.write("<tr>");
+                        for (var x=0;x<10;x++) {
+                            var num = i*x;
+                            document.write("<td style='border:1px solid black'>" + num + "</td>");
+                        }
+                    document.write("</tr>");
+                }
+            document.write("</table>");
+        document.write("</section>");
+        */
+
+        /** ejercicio 4
+        var num1, num2, num, operacion;
+        num1 = parseInt(prompt("Introduzca el primer número: "));
+        num2 = parseInt(prompt("Introduzca el segundo número: "));
+        operacion = prompt("Introduzca la operación a realizar: ");
+        switch (operacion) {
+            case "suma": 
+                num = parseInt(num1+num2);
+                document.write(num);
+                break;
+            case "resta": 
+                num = parseInt(num1-num2);
+                document.write(num);
+                break;
+            case "multiplicacion": 
+                num = num = parseInt(num1*num2);
+                document.write(num);
+                break;
+            case "division": 
+                num = parseInt(num1/num2);
+                document.write(num);
+                break;
+            default:
+                break;
+        }
+        */
+
+        /** ejercicio 5
+        var num1, num2, num;
+        num1 = parseInt(prompt("Introduzca el primer número: "));
+        num2 = parseInt(prompt("Introduzca el segundo número: "));
+        num = num1-num2;
+        if (num<0) {
+            document.write(num2 + " es mayor que " + num1);
+        } else if (num==0) {
+            document.write("Los dos números son iguales");
+        } else {
+            document.write(num1 + " es mayor que " + num2);
+        }
+        */
+
+        /** ejercicio 6
+        var num, numFact = 1;
+        num = parseInt(prompt("Introduzca el número: "));
+        for (var i=1;i<=num;i++) {
+            document.write((num*i) + "</br>")
+            numFact *= i;
+        }
+        document.write("El factorial de " + num + " es " + numFact);
+        */
+
+        /** ejercicio 7
+        var num, acabado=false;
+        do {
+            num = parseInt(prompt("Introduzca el número"));
+            if (num == 7) {
+                acabado = true;
+            }
+        } while (!acabado)
+        */
+
+        /**
+        for (var i=1;i<=30;i++) {
+        personaje = prompt("Dime el nombre del personaje: ");
+        switch (personaje) {
+            case "C3PO": case "R2": case "Vader": case "Luke":
+                document.write("Es un personaje de star wars");
+                break;
+            default:
+                document.write("No es un personaje de star wars");
+                break;
+        }
+        }
+        */
+
+        /** ejercicio 10
+        var num, edad, dia, nombre;
+        nombre = prompt("Inserte su nombre");
+        edad = parseInt(prompt("Inserte su edad"));
+        dia = prompt("Inserte el nombre del día");
+        num = 12.50;
+
+        document.write("Bienvenido, " + nombre + "</br>, Precio del ticket: " + Math.round(num*100)/100 + "€</br>");
+
+        document.write("Precio sin IVA: " + num + "€</br>");
+        num = 12.50 * 1.10;
+        document.write("Precio con IVA: " + Math.round(num*100)/100 + "€</br>");
+        if ((edad >= 18 && edad <=26) || (edad >= 60)) {
+            num /= 1.15;
+            document.write("Precio con descuento de edad: " + Math.round(num*100)/100 + "€</br>");
+        } else {
+            document.write("No hay descuento por edad. </br>");
+        }
+        switch (dia) {
+            case "miércoles": case "viernes": 
+                num /= 1.05;
+                document.write("Precio con descuento de día de semana: " + Math.round(num*100)/100 + "€</br>");
+                break;
+            default:
+                document.write("No hay descuento por día de semana. </br>");
+        }
+        document.write("<h2>Precio final: "+ Math.round(num*100)/100 + "€</h2>");
+        */ 
+
+        /** ejercicio 11
+        var num;
+        do {
+            num = prompt("Inserte un número");
+        } while (isNaN(num))
+        num.toString();
+        document.write("El número " + num + " tiene " + num.length + " cifras");
+        */
+        
+    </script>
+</body>
+</html>
