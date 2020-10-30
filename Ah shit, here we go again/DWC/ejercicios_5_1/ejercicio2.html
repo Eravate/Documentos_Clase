@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        function comprobarEmailBia() {
+            const email = document.getElementById("email").value;
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            const emailArr = email.split('@');
+            const arrDom = emailArr[emailArr.length-1];
+            const listaServidores=["terra.es","google.com","marca.es","yahoo.es"];
+            if(re.test(email) && listaServidores.includes(arrDom)){
+                document.getElementById("result").innerHTML = "";
+            } else {
+                document.getElementById("result").innerHTML = "Error, compruebe el formato de email";
+            }
+        }
+        function comprobarEmail() {
+            const email = document.getElementById("email").value;
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            const emailArr = email.split('@');
+            const arrDom = emailArr[emailArr.length-1];
+            const listaServidores=["terra.es","google.com","marca.es","yahoo.es"];
+            if(re.test(email) && listaServidores.includes(arrDom)){
+                document.getElementById("formEmail").submit();
+            } else {
+                alert ("Error, compruebe el formato de email");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formEmail">
+        Email: <input type="text" name="email" id="email" onfocusout="comprobarEmailBia()"> <input type="button" id="enviar" value="Enviar" onclick="comprobarEmail()"><br><br>
+        <p id="result" style="color:red;"></p>
+    </form>
+</body>
+</html>

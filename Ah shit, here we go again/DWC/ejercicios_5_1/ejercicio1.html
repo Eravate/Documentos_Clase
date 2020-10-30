@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        function comprobarDni() {
+            var dni = document.getElementById("dni").value;
+            var numDni = parseInt(dni.substring(0,8));
+            var letra = dni.substring(8,9);
+            var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']; 
+            restoDni = numDni % 23;
+            var letraCorrecta = letras[restoDni];
+            if((/^\d{8}[A-Z]$/.test(dni)) && letra == letraCorrecta){
+                formulario = document.getElementById("formDni");
+                formulario.submit();
+            } else {
+                document.getElementById("result").innerHTML = "Error, compruebe que el formato de DNI y la letra sean correctos"
+            }
+        }
+        function comprobarDniBas() {
+            var dni = document.getElementById("dni").value;
+            var numDni = parseInt(dni.substring(0,8));
+            var letra = dni.substring(8,9);
+            var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T']; 
+            restoDni = numDni % 23;
+            var letraCorrecta = letras[restoDni];
+            if(!(/^\d{8}[A-Z]$/.test(dni)) || letra != letraCorrecta){
+                document.getElementById("result").innerHTML = "Error, compruebe que el formato de DNI y la letra sean correctoS"
+            } else {
+                document.getElementById("result").innerHTML = ""
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formDni">
+        DNI: <input type="text" name="dni" id="dni" onfocusout="comprobarDniBas()"> <input type="button" id="enviar" value="enviar" onclick="comprobarDni()"><br><br>
+        <p id="result" style="color:red;"></p>
+    </form>
+</body>
+</html>

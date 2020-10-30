@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        function comprobarAnagrama() {
+            var text1 = document.getElementById("text1").value;
+            var text2 = document.getElementById("text2").value;
+            text1 = text1.replace(/\s/g, ''); text2 = text2.replace(/\s/g, '');
+            text1 = text1.toLowerCase(); text2 = text2.toLowerCase();
+            text2 = text2.split("").reverse().join("");
+            if (text1 == text2) {
+                document.getElementById("result").innerHTML = "Son anagrama";
+            } else {
+                document.getElementById("result").innerHTML = "No son anagrama";
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formEmail">
+        Texto 1: <input type="text" name="text1" id="text1"> <br><br>
+        Texto 2: <input type="text" name="text2" id="text2"> <input type="button" id="enviar" value="Enviar" onclick="comprobarAnagrama()"><br><br>
+        <p id="result"></p>
+    </form>
+</body>
+</html>

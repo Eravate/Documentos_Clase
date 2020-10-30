@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <script>
+        function comprobarSelect() {
+            const e = document.getElementById("selprovincia").value;
+            switch (e) {
+                case "nosel":
+                    document.getElementById("selciu").innerHTML = "<option value='sinsel'>Selecciona Provincia</option>";
+                    break;
+                case "huesca":
+                    document.getElementById("selciu").innerHTML = "<option value='huesCap'>Huesca Capital</option><option value='jaca'>Jaca</option><option value='barbastro'>Barbastro</option>";
+                    break;
+                case "zaragoza":
+                    document.getElementById("selciu").innerHTML = "<option value='zagCap'>Zaragoza Capital</option><option value='calatayud'>Calatayud</option><option value='ejea'>Ejea de los Caballeros</option>";
+                    break;
+                case "teruel":
+                    document.getElementById("selciu").innerHTML = "<option value='terCap'>Teruel Capital</option><option value='alcaniz'>Alcañiz</option><option value='calamocha'>Calamocha</option>";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="formEmail">
+        <select id="selprovincia" onmouseout="comprobarSelect()">
+            <option value="nosel">Provincia</option>
+            <option value="huesca">Huesca</option>
+            <option value="zaragoza">Zaragoza</option>
+            <option value="teruel">Teruel</option>
+        </select><br><br>
+        <select id="selciu">
+            <option value="sinsel">Selecciona Provincia</option>
+        </select>
+        <p id="result"></p>
+    </form>
+</body>
+</html>
