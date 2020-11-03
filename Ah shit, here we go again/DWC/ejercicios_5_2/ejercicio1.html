@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        function maxLength(el) {    
+            if (!('maxLength' in el)) {
+                var max = el.attributes.maxLength.value;
+                el.onkeypress = function () {
+                    if (this.value.length >= max) return false;
+                };
+            }
+        }
+        maxLength(document.getElementById("text"));
+    </script>
+</head>
+<body>
+    <textarea maxlength="200" id="text">Este textarea tiene un limite de 200 carácteres</textarea>
+</body>
+</html>
