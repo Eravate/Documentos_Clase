@@ -1,0 +1,49 @@
+    /* Añade tu código AQUI */
+    
+    body {
+        font-family: 'Lato', sans-serif;
+        background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+    }
+    
+    a {
+        color: white;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-decoration: none;
+        padding: 20px 5px;
+        width: 100%;
+        text-align: center;
+        /* Añade tu código AQUI */
+    }
+    
+    .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 50px;
+    }
+    /* Código FLEXBOX */
+    /* MEDIA QUERIES */
+    /* Propiedades para autoría FlatIcon */
+    
+    .credits {
+        width: 100%;
+        margin: 0 auto;
+        border-top: 1px solid black;
+    }
+    
+    .credits>* {
+        font-size: 0.7em;
+        color: black;
+    }
+    
+    .credits p {
+        padding-left: 2%;
+    }
+    
+    .credits a {
+        padding: 0;
+        letter-spacing: 0;
+        width: auto;
+        font-weight: 500;
+        color: black;
+    }
