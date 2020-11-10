@@ -1,0 +1,30 @@
+/* clear fix */
+ #flex-container:after {
+    display: inline;
+}
+nav{
+    text-align: center;
+    float: left;
+    width: 33%;
+}
+section{
+    text-align: center;
+    float: left;
+    width: 33%;
+}
+aside{
+    text-align: center;
+    float: left;
+    width: 33%;
+}
+
+nav {
+    transform: translateX(-100%);
+}
+section {
+    transform: translateX(100%);
+}
+
+footer {
+    clear: both;
+}

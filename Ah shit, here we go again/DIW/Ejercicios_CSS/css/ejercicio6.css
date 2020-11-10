@@ -1,0 +1,50 @@
+#flex-container { display:flex; flex-direction: column;}
+section { order: 2 }
+nav { order: 1 }
+aside { order: 3 }
+@media (min-width:577px) {
+
+
+#flex-container {
+    position: relative;
+}
+
+#flex-container { display:flex; flex-direction: row;}
+section { order: 2 }
+nav { order: 1 }
+aside { order: 3 }
+nav {
+    width: 30%;
+    float: left;
+}
+
+section {
+    width: 40%;
+    float: left;
+}
+
+aside {
+    width: 30%;
+    float: right;
+}
+footer {
+    clear: both;
+}
+}
+
+
+@media (max-width: 576px) {
+
+    section {
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+    }
+    
+}

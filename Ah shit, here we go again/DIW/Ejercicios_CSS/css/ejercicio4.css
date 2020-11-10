@@ -138,7 +138,7 @@ div:last-child {
 
 /* Aplica a los párrafos que no están en ningún <div> fuente en negrita y color de fondo blanchealmond */
 
-p:not(div) {
+:not(div) > p{
     font-weight: bold;
     background-color: blanchedalmond;
 }

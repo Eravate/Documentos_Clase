@@ -1,0 +1,16 @@
+@media print {
+    header, footer, nav {
+        display: none;
+    }
+    body {
+        width: 95%;
+    }
+    section {
+        border: 1px solid black;
+        padding: 5px;
+    }
+    aside {
+        border: 1px solid black;
+        padding: 5px;
+    }
+}
