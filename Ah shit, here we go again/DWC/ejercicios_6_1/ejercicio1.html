@@ -1,7 +1,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,6 +15,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <form>
+            <fieldset>
+                <p id="text"></p><br>
+                Nombre: <input type="text" name="nombre" id="nombre"> 
+                <input type="radio" name="selec" id="recordar" checked>Recordarme 
+                <input type="radio" name="selec" id="olvidar">Olvidar 
+                <input type="button" value="Aceptar" onclick="realizarAccionCookie()">
+            </fieldset>
+        </form>
         <script>
             function realizarAccionCookie() {
                 var nombre = document.getElementById("nombre").value;
@@ -23,23 +32,15 @@
                 } else {
                     sessionStorage.removeItem("nombre");
                 }
+                location.reload();
             }
             var nombre = "Hola ";
             nombre += sessionStorage.getItem("nombre");
-            if (nombre == null) {
-                nombre += "Hola desconocido";
+            if (nombre == "Hola null") {
+                document.getElementById("text").innerHTML = "Hola Desconocido";
+            } else {
+                document.getElementById("text").innerHTML = nombre;
             }
-            document.getElementById("text").innerHTML = nombre;
         </script>
-
-        <form>
-            <fieldset>
-                <p id="text"></p><br>
-                Nombre:<input type="text" name="nombre" id="nombre"> 
-                <input type="radio" name="selec" id="recordar" checked>Recordarme 
-                <input type="radio" name="selec" id="olvidar">Olvidar 
-                <input type="button" value="Aceptar" onclick="realizarAccionCookie()">
-            </fieldset>
-        </form>
     </body>
 </html>
