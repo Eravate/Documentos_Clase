@@ -1,0 +1,46 @@
+body {
+    padding: 0px;
+    height: 100%;
+    margin: 0px;
+    background: linear-gradient(#000000, #444444);
+    background-repeat: no-repeat;
+}
+
+#imgFondo {
+    width: 70%;
+    float: right;
+}
+footer {
+    clear: both;
+    display: block;
+    position: relative;
+    top: -90px;
+    background-color: white;
+    width: 100%;
+    height: 40%;
+}
+.divFooter {
+    float: left;
+    width: 33.33%;
+    height: 230px;
+    vertical-align: center;
+}
+
+.divFooter h2 {
+    margin: 30px;
+}
+.divFooter p {
+    margin: 30px;
+}
+
+#socials {
+    background-color: #d6d6d6;
+}
+
+#tour {
+    background-color: #ffffff;
+}
+
+#views {
+    background-color: #ff4606;
+}
