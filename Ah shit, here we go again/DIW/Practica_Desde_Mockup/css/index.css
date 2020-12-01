@@ -183,7 +183,7 @@
         vertical-align: center;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 799px) {
     #contenido2 {
         height: 100%;
         width: 100%;
@@ -200,6 +200,7 @@
     body {
         height: 100%;
         margin: 0px;
+        font-family: "Montserrat", sans-serif;
         width: 100%;
     }
     main {
@@ -210,23 +211,102 @@
         text-decoration: none;
         color: white;
     }
-    .locklear-brand {
+      .dropdown {
+        height: 25%;
+        width: 50px;
         position: relative;
+        left: 7%;
         top: 30px;
-        left: 60px;
-    }
-    .locklear-brand ul {
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s linear;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        padding-inline-start: 0px;
+        background-color: #f1f1f1;
+        min-width: 160px;
         list-style: none;
-        display: none;
-        position: absolute; 
-    }
-    .locklear-brand img:hover + ul {
-        display: inherit;
-    }
-    .locklear-brand ul li {
-        width:170px;
-        float:none;
-        display:list-item;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content li a {
+        z-index: 2;
+          padding: 10px;
+          text-align: center;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content li {
+        z-index: 2;
+      }
+      
+      .dropdown-content a:hover {background-color: #ddd;}
+      
+      .dropdown:hover .dropdown-content {visibility: visible;
+        opacity: 1;}
+    
+    .sociales {
         position: relative;
+        width: 40%;
+        height: 5%;
+        right: 10%;
+        top: 35px;
+        float: right;
+    }
+    .sociales img{
+        float: right;
+        margin: 0px 10px;
+    }
+    .text {
+        position :relative;
+        width: 100%;
+        height: 30%;
+        top: -120px;
+        
+    }
+    .text h1 {
+        z-index: 0;
+        font-size: 55px;
+        margin-left: 5%;
+        color: white;
+    }
+    .text p:first-of-type {
+        position :relative;
+        font-size: 16px;
+        margin-left: 5%;
+        line-height: 1.8;
+        width: 70%;
+        color: white;
+    } 
+    .text p:nth-of-type(2) a {
+        position :relative;
+        top: 10px;
+        margin-left: 5%;
+        font-size: 18px;
+        color: orangered;
+    }
+    #imgFondo {
+        position: relative;
+        top: 15px;
+        width: 100%;
+    }
+    #boton {
+        position: relative;
+        margin: auto;
+        top: -10px;
+        font-weight: normal;
+        width: 50%;
+        padding: 15px 0px;
+        font-size: 25px;
+        text-align: center;
+        background-color:  #ff4606;
     }
 }
