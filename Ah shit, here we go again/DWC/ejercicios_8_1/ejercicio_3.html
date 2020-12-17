@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <style>
+        div {
+            background-color: black;
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        main {
+            width: 450px;
+            margin: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    <main><br><br>
+        <div id="contenido" style="float:left;"></div><div id="contenido" style="float:right;"></div>
+        <div id="contenido" style="float:left;margin-top: 50px;"></div><div id="contenido" style="float:right;margin-top: 50px;"></div>
+    </main>
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        $('div').toggle(
+            function() {
+                $(this).css('background-color', getRandomColor());
+            }, function() {
+                $(this).css('background-color', 'black');
+            });
+    </script>
+</body>
+</html>

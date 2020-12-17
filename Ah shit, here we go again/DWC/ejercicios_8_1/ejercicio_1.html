@@ -20,11 +20,11 @@
         }
     </style>
     <script>
-        function callbackPromisaDeslizar() {
+        function callbackPromisaDeslizar(long) {
             return new Promise(resolve => {
                 setTimeout(() => {
                     resolve(true);
-                }, 4000);
+                }, long);
             })
             
         }
@@ -36,7 +36,18 @@
                             //acción
                 });
             }
-            await callbackPromisaDeslizar();
+            await callbackPromisaDeslizar(3600);
+            $("#slide").prop('disabled',false);
+            $("#fade").prop('disabled',false);
+        }
+        async function desvanecer() {
+            $("#slide").prop('disabled',true);
+            $("#fade").prop('disabled',true);
+            for (var i=0;i<3;i++) {
+                $("#contenido").fadeOut();
+                $("#contenido").fadeIn();
+            }
+            await callbackPromisaDeslizar(2300);
             $("#slide").prop('disabled',false);
             $("#fade").prop('disabled',false);
         }
